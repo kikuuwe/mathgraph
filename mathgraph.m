@@ -10,23 +10,24 @@ colGry  = GrayLevel[0.5];
 colLgtGry = GrayLevel[0.8];
 smallimage = {130,100};
 largeimage = {1,1}260;
-imagepaddingvalue=60{{1,1},{1,1}};
+imagepadding=40{{1,1},{1,1}};
+gridlinestyle={Directive[ab03,colGry,ad11],Directive[ab03,colGry,ad11]};
 SetOptions[GraphicsGrid,Spacings->{0,0},PlotRangePadding->{0,0}];
 theStylesP={
 	Frame->True,
 	FrameStyle->ab03,
 	Axes->{False,False},
-	AxesStyle->{Directive[ab03,colGry,ad11],Directive[ab03,colGry,ad11]},
+	AxesStyle->gridlinestyle,
 	ImageMargins->{{0,0},{0,0}},
 	PlotRangePadding->{0,0},
 	AspectRatio->1/GoldenRatio,
 	ImageSize->largeimage,
-	ImagePadding->imagepaddingvalue,
+	ImagePadding->imagepadding,
 	DisplayFunction->Identity,
-	GridLines->{None,None},
-	GridLinesStyle->{Directive[ab03,colGry,ad11],Directive[ab03,colGry,ad11]},
+	GridLines->{Automatic,Automatic},
+	GridLinesStyle->gridlinestyle,
 	FrameTicksStyle->Directive[FontSize->8,FontFamily->"Times"]
-}
+};
 theStyles={
 	PlotMarkers->{Graphics[{Disk[]}],0.03},
 	Joined->True,
